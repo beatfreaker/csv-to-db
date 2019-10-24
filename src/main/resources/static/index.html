@@ -21,10 +21,10 @@
                 const formData = new FormData();
                 formData.append('file', excel[0]);
                 document.querySelector('#process').innerHTML = "Uploading file...";
-                fetch('/upload', { method: 'POST', body: formData })
+                fetch('http://localhost:8080/upload', { method: 'POST', body: formData })
                     .then(r => {
                         document.querySelector('#process').innerHTML = "File uploaded successfully.";
-                        fetch('/users').then(resp => resp.json()).then(users => {
+                        fetch('http://localhost:8080/users').then(resp => resp.json()).then(users => {
                             document.querySelector('pre').innerHTML = JSON.stringify(users, null, 2);
                         });
                     })
