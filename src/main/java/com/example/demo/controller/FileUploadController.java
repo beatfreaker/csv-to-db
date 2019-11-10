@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.ProcessExcelService;
+import com.example.demo.service.ProcessCSVService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +14,7 @@ import javax.inject.Inject;
 public class FileUploadController {
 
     @Inject
-    ProcessExcelService service;
+    ProcessCSVService service;
 
     @PostMapping("/upload")
     public String upload(@RequestParam("file") MultipartFile file) throws Exception {
